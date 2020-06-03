@@ -1,0 +1,119 @@
+@prefix schema: <https://schema.org/> .
+@prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/objects/Software/tensorflow/probability/> a sd:Software ;
+    sd:author <https://example.org/objects/Person/tensorflow> ;
+    sd:citation """If you use TensorFlow Probability in a paper, please cite:
+
++ _TensorFlow Distributions._ Joshua V. Dillon, Ian Langmore, Dustin Tran,
+Eugene Brevdo, Srinivas Vasudevan, Dave Moore, Brian Patton, Alex Alemi, Matt
+Hoffman, Rif A. Saurous.
+[arXiv preprint arXiv:1711.10604, 2017](https://arxiv.org/abs/1711.10604).
+
+(We're aware there's a lot more to TensorFlow Probability than Distributions, but the Distributions paper lays out our vision and is a fine thing to cite for now.)
+"""^^xsd:string ;
+    sd:dateCreated "2017-10-23T23:50:54+00:00"^^xsd:dateTime ;
+    sd:dateModified "2020-06-03T21:35:21+00:00"^^xsd:dateTime ;
+    sd:description "Probabilistic reasoning and statistical analysis in TensorFlow"^^xsd:string ;
+    sd:hasDownloadUrl "https://api.github.com/repos/tensorflow/probability/{archive_format}{/ref}"^^xsd:anyURI ;
+    sd:hasInstallInstructions """For additional details on installing TensorFlow, guidance installing
+prerequisites, and (optionally) setting up virtual environments, see the
+[TensorFlow installation guide](https://www.tensorflow.org/install).
+
+"""^^xsd:string,
+        """You can also install from source. This requires the [Bazel](
+https://bazel.build/) build system. It is highly recommended that you install
+the nightly build of TensorFlow (`tf-nightly`) before trying to build
+TensorFlow Probability from source.
+
+```shell
+#: sudo apt-get install bazel git python-pip  #: Ubuntu; others, see above links.
+python -m pip install --upgrade --user tf-nightly
+git clone https://github.com/tensorflow/probability.git
+cd probability
+bazel build --copt=-O3 --copt=-march=native :pip_pkg
+PKGDIR=$(mktemp -d)
+./bazel-bin/pip_pkg $PKGDIR
+python -m pip install --upgrade --user $PKGDIR/*.whl
+```
+
+"""^^xsd:string,
+        """python -m pip install --upgrade --user "tensorflow&lt;2" "tensorflow_probability&lt;0.9" 
+"""^^xsd:string,
+        """python -m pip install --upgrade --user pip 
+python -m pip install --upgrade --user tensorflow tensorflow_probability 
+"""^^xsd:string ;
+    sd:hasSourceCode <https://example.org/objects/SoftwareSource/tensorflow/probability/> ;
+    sd:keywords "bayesian-methods"^^xsd:string,
+        "data-science"^^xsd:string,
+        "deep-learning"^^xsd:string,
+        "machine-learning"^^xsd:string,
+        "neural-networks"^^xsd:string,
+        "probabilistic-programming"^^xsd:string,
+        "statistics"^^xsd:string,
+        "tensorflow"^^xsd:string ;
+    sd:license "https://api.github.com/licenses/apache-2.0"^^xsd:anyURI ;
+    sd:name "tensorflow/probability"^^xsd:string .
+
+<https://example.org/objects/Software/tensorflow/tensorflow/> a sd:Software ;
+    sd:author <https://example.org/objects/Person/tensorflow> ;
+    sd:dateCreated "2015-11-07T01:19:20+00:00"^^xsd:dateTime ;
+    sd:dateModified "2020-06-03T22:04:26+00:00"^^xsd:dateTime ;
+    sd:description "An Open Source Machine Learning Framework for Everyone"^^xsd:string ;
+    sd:hasDownloadUrl "https://api.github.com/repos/tensorflow/tensorflow/{archive_format}{/ref}"^^xsd:anyURI ;
+    sd:hasInstallInstructions """Linux GPU            |  | PyPI 
+"""^^xsd:string,
+        """See the [TensorFlow install guide](https://www.tensorflow.org/install) for the
+[pip package](https://www.tensorflow.org/install/pip), to
+[enable GPU support](https://www.tensorflow.org/install/gpu), use a
+[Docker container](https://www.tensorflow.org/install/docker), and
+[build from source](https://www.tensorflow.org/install/source).
+
+To install the current release, which includes support for
+[CUDA-enabled GPU cards](https://www.tensorflow.org/install/gpu) *(Ubuntu and
+Windows)*:
+
+```
+$ pip install tensorflow
+```
+
+A smaller CPU-only package is also available:
+
+```
+$ pip install tensorflow-cpu
+```
+
+To update TensorFlow to the latest version, add `--upgrade` flag to the above
+commands.
+
+*Nightly binaries are available for testing using the
+[tf-nightly](https://pypi.python.org/pypi/tf-nightly) and
+[tf-nightly-cpu](https://pypi.python.org/pypi/tf-nightly-cpu) packages on PyPi.*
+
+"""^^xsd:string ;
+    sd:hasSourceCode <https://example.org/objects/SoftwareSource/tensorflow/tensorflow/> ;
+    sd:keywords "deep-learning"^^xsd:string,
+        "deep-neural-networks"^^xsd:string,
+        "distributed"^^xsd:string,
+        "machine-learning"^^xsd:string,
+        "ml"^^xsd:string,
+        "neural-network"^^xsd:string,
+        "python"^^xsd:string,
+        "tensorflow"^^xsd:string ;
+    sd:license "https://api.github.com/licenses/apache-2.0"^^xsd:anyURI ;
+    sd:name "tensorflow/tensorflow"^^xsd:string .
+
+<https://example.org/objects/SoftwareSource/tensorflow/probability/> a sd:SoftwareSource ;
+    sd:codeRepository "https://github.com/tensorflow/probability"^^xsd:anyURI ;
+    sd:programmingLanguage "documentation_url"^^xsd:string,
+        "message"^^xsd:string .
+
+<https://example.org/objects/SoftwareSource/tensorflow/tensorflow/> a sd:SoftwareSource ;
+    sd:codeRepository "https://github.com/tensorflow/tensorflow"^^xsd:anyURI ;
+    sd:programmingLanguage "documentation_url"^^xsd:string,
+        "message"^^xsd:string .
+
+<https://example.org/objects/Person/tensorflow> a schema:Person ;
+    schema:additionalName "tensorflow"^^schema:Text .
+
