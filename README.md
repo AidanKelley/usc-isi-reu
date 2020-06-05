@@ -18,7 +18,7 @@ To setup SoMEF, do
 
 ``` somef configure ```
 
-and follow instructions. Then, you run these commands
+and follow instructions. Then, to replicate the two out files you run these commands
 
 ``` python main.py ../somef/data/description.csv --csv -o somef_repos_out.ttl ```
 
